@@ -36,7 +36,6 @@ REPOSITORIES="\
     bin \
     dotfiles \
     durnberger.github.io \
-    jekyll-theme-webspace \
     mutt-email \
     "
 # Timestamp
