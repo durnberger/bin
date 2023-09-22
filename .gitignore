@@ -2,4 +2,5 @@
 # Files to ignore in the ~/bin directory
 #
 *.AppImage
-*.appimage 
+*.appimage
+.gitignore
