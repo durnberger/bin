@@ -1,0 +1,64 @@
+#!/bin/bash
+
+# ~/bin/new-unique-note.sh
+
+# New notes are created with the Zettelkasten system in mind.
+#
+# Add 'alias nn=~/bin/new-unique-note.sh' to '~/.bash_aliases' to make life easier
+#
+
+# Name the file - requires user input
+echo
+echo -e "New Note"
+echo -e "--------"
+echo
+echo -e "This file will be saved to the PWD"
+echo
+echo -n "Provide a title for the post: "
+
+read INPUT
+
+# Heading
+# Ensure first letter of each word is uppercase
+# Source: https://stackoverflow.com/questions/12487424/uppercase-first-character-in-a-variable-with-bash
+# One day I'll figure out why this works!
+foo="$INPUT"
+foo=( $foo )
+foo="${foo[@]^}"
+TITLE=$foo
+
+# File name title. Replace spaces in the title with dashes
+FILE_TITLE=${INPUT// /-}
+
+# The date that will appear in the frontmatter
+DATE=$(date "+%Y-%m-%d")
+
+# The uid that will appear in the frontmatter
+UNIQUE=$(date "+%Y%m%d%H%M%S")
+
+# Date in the format required for the file title prefix
+PREFIX=$(date "+%Y-%m-%d-%H%M")
+
+# Filename
+FILENAME="$PWD/$PREFIX-$FILE_TITLE.md"
+
+touch $FILENAME
+{
+  echo -e "---"
+  echo -e "date: $DATE"
+  echo -e "uid: $UNIQUE"
+  echo -e "author: Paul Dürnberger"
+  echo -e "title: $TITLE"
+  echo -e "tags: [ ]"
+
+  echo -e "synopsis:"
+  echo -e "---"
+  echo
+  echo 
+  echo
+  echo -e "Source:"  
+} >> $FILENAME
+
+# Edit the file
+nvim $FILENAME
+
