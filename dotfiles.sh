@@ -40,6 +40,7 @@ SELECTION="\
     .fluxbox \
     .mutt \
     .nano \
+    .pandoc \
     .config/dunst \
     .config/i3 \
     .config/i3blocks \
@@ -58,12 +59,11 @@ SELECTION="\
 cd $DOT
 
 # For each item in the `SELECTION` list above, do the following;
-for item in $SELECTION; do
+for ITEM in $SELECTION; do
     
     # Move the original file from $HOME to the backup directory
-    mv ~/$item $BUP/
+    mv ~/$ITEM $BUP/
 
     # Create a symlink for the file from the dotfile directory to the $HOME directory
-    ln -s $DOT/$item ~/$item
+    ln -s $DOT/$ITEM ~/$ITEM
 done
-
