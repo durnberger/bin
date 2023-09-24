@@ -15,10 +15,10 @@ case $option in
     'Log Out')
         i3-msg exit
         ;;
-    Reboot)
-        systemctl reboot
+    'Reboot')
+        reboot
         ;;
     'Power Off')
-        systemctl poweroff
+        shutdown -h now
         ;;
 esac
