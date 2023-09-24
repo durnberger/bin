@@ -1,14 +1,8 @@
 # !/bin/bash
 
 #
-# -----------------------------------------------------------------
-#
-# FUZZYFILES ~ Paul Durnberger ~ 2023-07-25
-#
-# -----------------------------------------------------------------
-#
-
-# Used to track down any type of file and directory 
+# FUZZYFILE SEARCH 
+# ----------------
 #
 
 # DEPENDENCIES
@@ -34,9 +28,9 @@
 # by spaces. 
 #
 # 'wild     :exact-match, list items that include wild
-# ^music	:prefix-exact-match, list items that start with music
+# ^music    :prefix-exact-match, list items that start with music
 # .mp3$     :suffix-exact-match, list items that end with .mp3
-# !fire	    :inverse-exact-match, list items that do not include fire
+# !fire     :inverse-exact-match, list items that do not include fire
 #
 
 # EDITOR
