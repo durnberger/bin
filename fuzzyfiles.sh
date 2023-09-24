@@ -1,9 +1,11 @@
 # !/bin/bash
 
-#
 # FUZZYFILE SEARCH 
-# ----------------
-#
+# ================
+# This script uses ripgrep (rg) to search for a chosen word within files
+# in the current and sub directories. The ouput is then passed to
+# fzf where the search can be narrowed further. 
+# 
 
 # DEPENDENCIES
 # ------------
@@ -16,8 +18,7 @@
 # 
 # To ensure the latest version of 'fzf' is installed, rather than
 # install via the standard repository, clone it from the git as per
-# the developers instructions,
-# https://github.com/junegunn/fzf#using-git
+# the instructions at https://github.com/junegunn/fzf#using-git
 #
 
 # SEARCH SYNTAX
@@ -42,35 +43,32 @@
 # The selected file will be opened in your preferred $EDITOR.
 #
 
-# SCRIPT
-# ------
+# RipGrep OPTIONS
+# ---------------
 # -i            case insensitive search
 # -l            list file names only
 # -g            glob: include or exclude files & directories
 # --hidden      show hidden .dot directories
 # --no-follow   do not follow symbolic links
 #
-
+ 
+# SCRIPT
+# ------
+#
 LG='\033[1;32m' # light green
 CL='\033[0m'    # clear
 
-echo -e ${LG}
-echo -e "-------------------------------------------"
-echo -e "------------ Fuzzy File Search ------------"
-echo -e "-------------------------------------------"
-echo -e ${CL}
-echo -e "This script will NOT:"
-echo -e " - Search for hidden .dot files, or"
-echo -e " - Follow symbolic links"
 echo
-echo -e "Use 'f' (alias=f) to locate system files"
+echo -e ${LG}"---- Fuzzy Search ----"${CL}
 echo
+
 echo -n "Enter a search term: "
+echo
 
 read INPUT
 
-rg -i --no-follow $INPUT | \
-    fzf --height 70% \
+rg -i --no-follow --hidden $INPUT | \
+    fzf --height 80% \
         --color 'fg:#bbccdd,fg+:#ddeeff,border:#778899' \
         --delimiter : \
         --preview='tree -C {1}' \
@@ -79,6 +77,7 @@ rg -i --no-follow $INPUT | \
         --prompt='Files > ' \
         --bind 'enter:execute($EDITOR {1})' \
         --bind='del:execute(rm -ri {1})' \
+        --bind 'ctrl-c:execute(readlink -f {1} | xclip -selection clipboard)' \
         --bind='ctrl-p:toggle-preview' \
         --bind='ctrl-d:change-prompt(Dirs > )' \
         --bind='ctrl-d:+reload(find -type d)' \
@@ -91,9 +90,10 @@ rg -i --no-follow $INPUT | \
         --bind='ctrl-a:select-all' \
         --bind='ctrl-x:deselect-all' \
         --header '
-CTRL-D to display directories | CTRL-F to display files
+CTRL-d to display directories | CTRL-f to display files
 CTRL-a to select all | CTRL-x to deselect all
-ENTER to edit | DEL to delete
-CTRL-P to toggle preview
+ENTER to open in editor | DEL to delete
+CTRL-c to copy file path to clipboard
+CTRL-p to toggle preview
 
 '
