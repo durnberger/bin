@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 # Convert .dot to .svg
 

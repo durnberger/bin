@@ -1,4 +1,4 @@
-# !/bin/bash
+#!/bin/bash
 #
 # Use fuzzy find to search bash history and copy selected 
 # command to the clipboard

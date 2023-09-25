@@ -1,4 +1,4 @@
-# /!bin/bash
+#!/bin/bash
 
 # ~/bin/new-daily-note.sh
 
@@ -8,6 +8,20 @@
 #
 # to '~/.bash_aliases'
 #
+
+# Current Year
+YEAR=$(date +%Y)
+
+# Year directory 
+JOYEAR=~/Documents/Writing/001-Journal/$YEAR 
+
+# Check the year directory exists 
+if [ ! -d $JOYEAR ]; then
+        mkdir -p $JOYEAR
+fi
+
+# Switch to this years directory 
+cd $JOYEAR
 
 # Filename
 FILENAME=$(date +"%Y-%m-%d-%A").md

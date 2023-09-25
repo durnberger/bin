@@ -34,7 +34,7 @@ echo -e ${NC}
 echo -e "Select from:"
 echo
 echo -e "1) Daily Note (001-Journal)"
-echo -e "2) New Random Note (002-Notes)"
+echo -e "2) Quick Note (002-Notes)"
 echo -e "3) Family History"
 echo -e "4) Technology"
 echo -e "5) Travel"
@@ -46,24 +46,17 @@ echo
 read choice
 
 if [ "$choice" == "1" ]; then
-	# Journal
-    JOYEAR=$WRIDIR/001-Journal/$YEAR
-    if [ ! -d $JOYEAR ]; then
-        mkdir -p $JOYEAR
-    fi
-
-    cd $JOYEAR
+    # Daily note
     bash $BIN/new-daily-note.sh
 
 elif [ "$choice" == "2" ]; then
-    # Random Note
-    cd $WRIDIR/002-Notes/ 
-    bash $BIN/new-unique-note.sh
+    # Quick Note
+    bash $BIN/new-quick-note.sh
 
 elif [ "$choice" == "3" ]; then
     # Family History
     cd $WRIDIR/Family_History/ 
-    bash $BIN/new-unique-note.sh
+    bash $BIN/new-topical-note.sh
 
 elif [ "$choice" == "4" ]; then
     # Technology
@@ -73,7 +66,7 @@ elif [ "$choice" == "4" ]; then
     fi 
 
     cd $TECHYEAR 
-    bash $BIN/new-unique-note.sh
+    bash $BIN/new-topical-note.sh
 
 elif [ "$choice" == "5" ]; then
     TRAVYEAR=$WRIDIR/Travel/posts/$YEAR
@@ -82,7 +75,7 @@ elif [ "$choice" == "5" ]; then
     fi 
 
     cd $TRAVYEAR 
-    bash $BIN/new-unique-note.sh 
+    bash $BIN/new-topical-note.sh 
 
 elif [ "$choice" == "6" ]; then
 	# Correspondence

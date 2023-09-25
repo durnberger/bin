@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 # Log out, reboot or power-off using the rofi interface
 # A variation of a script written by jmutai@computingforgeeks.com
