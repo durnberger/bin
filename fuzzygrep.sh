@@ -73,7 +73,7 @@ rg -i --no-follow --hidden $INPUT | \
         --delimiter : \
         --preview='tree -C {1}' \
         --preview='batcat --color=always --style=numbers --line-range=:500 {1}' \
-        --preview-window='40%'  \
+        --preview-window='50%'  \
         --prompt='Files > ' \
         --bind 'enter:execute($EDITOR {1})' \
         --bind='del:execute(rm -ri {1})' \

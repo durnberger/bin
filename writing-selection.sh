@@ -33,14 +33,13 @@ echo -e ${NC}
 #
 echo -e "Select from:"
 echo
-echo -e "1) Daily Note (001-Journal)"
-echo -e "2) Quick Note (002-Notes)"
-echo -e "3) Family History"
-echo -e "4) Technology"
-echo -e "5) Travel"
-echo -e "6) Correspondence"
+echo -e "1) Daily Note (Journal)"
+echo -e "2) Family History"
+echo -e "3) Technology"
+echo -e "4) Travel"
+echo -e "5) Correspondence"
 echo
-echo -e "7) Open the Writing Directory"
+echo -e "6) Open the Writing Directory"
 echo 
 
 read choice
@@ -50,15 +49,11 @@ if [ "$choice" == "1" ]; then
     bash $BIN/new-daily-note.sh
 
 elif [ "$choice" == "2" ]; then
-    # Quick Note
-    bash $BIN/new-quick-note.sh
-
-elif [ "$choice" == "3" ]; then
     # Family History
     cd $WRIDIR/Family_History/ 
     bash $BIN/new-topical-note.sh
 
-elif [ "$choice" == "4" ]; then
+elif [ "$choice" == "3" ]; then
     # Technology
     TECHYEAR=$WRIDIR/Technology/posts/$YEAR 
     if [ ! -d $TECHYEAR ]; then 
@@ -68,7 +63,7 @@ elif [ "$choice" == "4" ]; then
     cd $TECHYEAR 
     bash $BIN/new-topical-note.sh
 
-elif [ "$choice" == "5" ]; then
+elif [ "$choice" == "4" ]; then
     TRAVYEAR=$WRIDIR/Travel/posts/$YEAR
     if [ ! -d $TRAVYEAR ]; then
         mkdir -p $TRAVYEAR
@@ -77,11 +72,11 @@ elif [ "$choice" == "5" ]; then
     cd $TRAVYEAR 
     bash $BIN/new-topical-note.sh 
 
-elif [ "$choice" == "6" ]; then
+elif [ "$choice" == "5" ]; then
 	# Correspondence
 	bash $BIN/new-correspondence.sh
 
-elif [ "$choice" == "7" ]; then
+elif [ "$choice" == "6" ]; then
 	# Writing Directory 
     mc $WRIDIR
 

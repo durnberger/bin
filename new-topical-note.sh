@@ -1,24 +1,24 @@
 #!/bin/bash
 
-# ~/bin/new-unique-note.sh
+# ~/bin/new-topical-note.sh
 
 # New notes are created with the Zettelkasten system in mind.
 #
-# Add 'alias nn=~/bin/new-unique-note.sh' to '~/.bash_aliases' to make life easier
+# Add 'alias tn=~/bin/new-topical-note.sh' to '~/.bash_aliases' to make life easier
 #
 
 # Name the file - requires user input
 echo
-echo -e "New Note"
-echo -e "--------"
+echo -e "New Topical Note"
+echo -e "----------------"
 echo
-echo -e "This file will be saved to the PWD"
+echo -e "This file will be saved to the specified topic directory "
 echo
-echo -n "Provide a title for the post: "
+echo -en "Provide a title for the post: "
 
 read INPUT
 
-# Heading
+# Title in front matter
 # Ensure first letter of each word is uppercase
 # Source: https://stackoverflow.com/questions/12487424/uppercase-first-character-in-a-variable-with-bash
 # One day I'll figure out why this works!
@@ -37,28 +37,26 @@ DATE=$(date "+%Y-%m-%d")
 UNIQUE=$(date "+%Y%m%d%H%M%S")
 
 # Date in the format required for the file title prefix
-PREFIX=$(date "+%Y-%m-%d-%H%M")
+PREFIX=$(date "+%Y-%m-%d")
 
 # Filename
 FILENAME="$PWD/$PREFIX-$FILE_TITLE.md"
 
-touch $FILENAME
+# Create the file
 {
-  echo -e "---"
-  echo -e "date: $DATE"
-  echo -e "uid: $UNIQUE"
-  echo -e "author: Paul Dürnberger"
-  echo -e "title: $TITLE"
-  echo -e "tags: [ ]"
-
-  echo -e "synopsis:"
-  echo -e "---"
-  echo
-  echo 
-  echo
-  echo -e "Source:"  
-} >> $FILENAME
+    echo -e "---"
+    echo -e "date: $DATE"
+    echo -e "uid: $UNIQUE"
+    echo -e "author: Paul Dürnberger"
+    echo -e "title: $TITLE"
+    echo -e "tags: []"
+    echo -e "synopsis: "
+    echo -e "---"  
+} > $FILENAME
 
 # Edit the file
-nvim $FILENAME
+nvim \
+    -c "norm G2o" \
+    -c "norm zz" \
+    $FILENAME 
 

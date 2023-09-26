@@ -1,69 +1,41 @@
 #!/bin/bash
 
-# ~/bin/new-daily-note.sh
+# With thanks to https://www.youtube.com/watch?v=zB_3FIGRWRU
 
-# To make life easier add
-#
-#   'alias nd=~/bin/new-daily-note.sh'
-#
-# to '~/.bash_aliases'
-#
+# Switch to the notes directory  
+DIR=~/Documents/Writing/Daily_Notes/ 
+cd $DIR 
 
-# Current Year
-YEAR=$(date +%Y)
-
-# Year directory 
-JOYEAR=~/Documents/Writing/001-Journal/$YEAR 
-
-# Check the year directory exists 
-if [ ! -d $JOYEAR ]; then
-        mkdir -p $JOYEAR
-fi
-
-# Switch to this years directory 
-cd $JOYEAR
-
-# Filename
-FILENAME=$(date +"%Y-%m-%d-%A").md
-
-# Date in the frontmatter
+# Today's date and time 
+DAY=$(date +"%A")
 DATE=$(date +"%Y-%m-%d")
+TIMESTAMP=$(date +"%H:%M:%S")
 
 # UID in the frontmatter 
 UNIQUE=$(date +"%Y%m%d%H%M%S")
 
-# Frontmatter title
-TITLE=$(date +"%A")
+# Filename
+FILENAME="$DATE-$DAY".md
 
-# First line
-FIRSTLINE=$(date +"%A %d %B %Y")
-
-# If the daily note doesn't exist, create it
+# If today's quick note doesn't exist, create it
 if [ ! -f "$FILENAME" ]; then 
-
-    # Create the file 
-    touch $FILENAME
-    
+    # Create the file
     {
-    echo -e "---"
-    echo -e "date: $DATE"
-    echo -e "uid: $UNIQUE"
-    echo -e "author: Paul Dürnberger"
-    echo -e "title: $TITLE"
-    echo -e "tags: [ ]"
-    echo -e "---"
-    echo
-    echo -e "$FIRSTLINE"
-    echo
-    echo
-    } >> $FILENAME
-
-    # Edit the newly created file
-    $EDITOR $FILENAME
-
-else
-    # If the daily note already exists, open it
-    $EDITOR $FILENAME 
-
+        echo -e "---"
+        echo -e "date: $DATE"
+        echo -e "uid: $UNIQUE"
+        echo -e "author: Paul Dürnberger"
+        echo -e "title: $DAY"
+        echo -e "tags: [note]"
+        echo -e "---"
+        echo
+        echo -e "# Notes for $DAY" 
+    } > $FILENAME  
 fi
 
+nvim \
+    -c "norm Go" \
+    -c "norm Go## $TIMESTAMP" \
+    -c "norm G2o" \
+    -c "norm zz" \
+    $FILENAME
