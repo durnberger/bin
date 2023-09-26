@@ -55,14 +55,8 @@
 # SCRIPT
 # ------
 #
-LG='\033[1;32m' # light green
-CL='\033[0m'    # clear
-
 echo
-echo -e ${LG}"---- Fuzzy Search ----"${CL}
-echo
-
-echo -n "Enter a search term: "
+echo -en "Enter a search term:"
 echo
 
 read INPUT
@@ -73,8 +67,8 @@ rg -i --no-follow --hidden $INPUT | \
         --delimiter : \
         --preview='tree -C {1}' \
         --preview='batcat --color=always --style=numbers --line-range=:500 {1}' \
-        --preview-window='50%'  \
-        --prompt='Files > ' \
+        --preview-window='40%'  \
+        --prompt='Files: ' \
         --bind 'enter:execute($EDITOR {1})' \
         --bind='del:execute(rm -ri {1})' \
         --bind 'ctrl-c:execute(readlink -f {1} | xclip -selection clipboard)' \
