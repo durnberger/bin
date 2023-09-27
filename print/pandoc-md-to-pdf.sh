@@ -15,7 +15,7 @@ echo -e "The output will be saved to '~/Documents'"
 echo
 
 # --------Selection--------
-
+#
 type=(*.md)
 
 if [[ -f "$type" ]] ; then
@@ -35,9 +35,11 @@ if [[ -f "$type" ]] ; then
 
     do
 	    # 'basename' will strip file type '.md' from the 'filename'
+        #
     	stem=$(basename ${filename} .md)
 
     	# ---- Convert to PDF with weasyprint------
+        #
     	# f=format of input file
     	# o=output file
     	#
@@ -52,6 +54,7 @@ if [[ -f "$type" ]] ; then
                -o ~/Documents/TEMP.pdf
 
         # ---- Convert to PDF with latex--------
+        #
     	# f=format of input file
     	# o=output file
     	#
@@ -71,6 +74,7 @@ if [[ -f "$type" ]] ; then
 #            -o ~/Documents/TEMP.pdf
 
         # ---- Compress TEMP.pdf and generate the final output ----
+        #
         # The compression options are;
         # -dPDFSETTINGS=/screen	    Low quality and small size. (72 dpi)
         # -dPDFSETTINGS=/ebook	    Better quality, slightly larger (150 dpi)
@@ -81,9 +85,11 @@ if [[ -f "$type" ]] ; then
         ps2pdf -dPDFSETTINGS=/prepress ~/Documents/TEMP.pdf ~/Documents/${stem}.pdf
 
         # ---- Delete the tmp file ----
+        #
         rm ~/Documents/TEMP.pdf
     
         # ---- Open the newly generated PDF file ----
+        #
         evince ~/Documents/${stem}.pdf
 
        	# --------End of PDF--------
