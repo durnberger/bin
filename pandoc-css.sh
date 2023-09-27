@@ -19,6 +19,7 @@ cd ~/.pandoc/css/sass
 sass build-webpage.scss ../build-webpage.css
 sass print-article.scss ../print-article.css
 sass print-letter.scss ../print-letter.css
+sass print-memo.scss ../print-memo.css 
 
 echo
 echo -e "Conversions completed"
