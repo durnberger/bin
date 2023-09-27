@@ -2,9 +2,9 @@
 #
 
 echo
-echo -e "-----------------------"
-echo -e "Convert Markdown to PDF"
-echo -e "-----------------------"
+echo -e "---------------------------------"
+echo -e "Convert markdown to a PDF article"
+echo -e "---------------------------------"
 echo
 echo -e "This script will convert a 'markdown' file to a 'pdf'"
 echo

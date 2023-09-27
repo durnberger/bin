@@ -20,9 +20,7 @@ FILENAME=$DATE.md
 if [ ! -f "$FILENAME" ]; then 
     # Create the file
     {
-        echo -e "# $DATE" 
-        echo 
-        echo -e "Author: Paul Dürnberger"
+        echo -e "# Note: $DATE" 
     } > $FILENAME  
 fi
 
