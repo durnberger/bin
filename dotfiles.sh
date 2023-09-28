@@ -3,7 +3,6 @@
 # ~/bin/dotfiles.sh
 
 # =====================================================================================
-#
 # This is a simple script that can be used to symlink the files and folders in my 
 # dotfiles directory to my $HOME directory, should the need arise.
 # 
@@ -11,10 +10,8 @@
 # https://blog.smalleycreative.com/using-git-and-github-to-manage-your-dotfiles/
 #
 # Paul Dürnberger 
-#
-# =====================================================================================
-#
 
+# =====================================================================================
 # If necessary create the backup directory 
 # Better safe than sorry...
 #
