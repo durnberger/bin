@@ -8,9 +8,6 @@ echo -e "------------------------------"
 echo
 echo -e "This script will convert a 'markdown' file to a 'pdf'"
 echo
-echo -e "Before running this script, 'cd' into the directory"
-echo -e "that contains the file you wish to convert"
-echo
 echo -e "The output will be saved to '~/Documents'"
 echo
 
@@ -98,9 +95,11 @@ if [[ -f "$type" ]] ; then
     done
 
 else
-
-    echo
+    
+    echo 
+    echo -e "================================"
     echo -e "There are no markdown files here"
-    echo
+    echo -e "================================"
+    echo 
 
 fi

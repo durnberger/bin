@@ -83,7 +83,7 @@ elif [ "$choice" == "6" ]; then
 
 elif [ "$choice" == "7" ]; then
 	# Writing Directory 
-    mc $WRIDIR
+    ranger $WRIDIR
 
 else
 	# Exit
