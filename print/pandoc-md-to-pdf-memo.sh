@@ -86,7 +86,7 @@ if [[ -f "$type" ]] ; then
     
         # ---- Open the newly generated PDF file ----
         #
-        evince ~/Documents/${stem}.pdf
+        evince ~/Documents/${stem}.pdf &
 
        	# --------End of PDF--------
 
