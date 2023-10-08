@@ -9,7 +9,7 @@
 # Variables
 #
 DATE=$(date +"%Y-%m-%d")
-FILE=$DATE-Memo
+FILE=Printed:$DATE
 
 # Process
 #
