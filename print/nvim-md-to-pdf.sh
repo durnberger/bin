@@ -9,7 +9,7 @@
 # Variables
 #
 DATE=$(date +"%Y-%m-%d")
-FILE=Printed:$DATE
+FILE=Printed-$DATE
 
 # Process
 #

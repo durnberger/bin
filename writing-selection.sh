@@ -55,7 +55,7 @@ elif [ "$choice" == "2" ]; then
 
 elif [ "$choice" == "3" ]; then
     # Family History
-    cd $WRIDIR/Family_History/ 
+    cd $WRIDIR/Family_History/posts/ 
     bash $BIN/new-topical-note.sh
 
 elif [ "$choice" == "4" ]; then
@@ -83,7 +83,7 @@ elif [ "$choice" == "6" ]; then
 
 elif [ "$choice" == "7" ]; then
 	# Writing Directory 
-    mc $WRIDIR
+    ranger $WRIDIR
 
 else
 	# Exit
