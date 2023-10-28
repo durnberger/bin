@@ -48,14 +48,14 @@ touch $FILENAME
 {
   echo -e "---"
   echo -e "date: $DATE"
-  echo -e "author: $AUTHOR"
+  echo -e "author: Paul Dürnberger"
   echo -e "title: $TITLE"
   echo -e "---"
   echo -e "$TODAY"
   echo
   echo -e "Dear "
   echo
-  echo -e "Subject: **$TITLE**"
+  echo -e "Subject: $TITLE"
   echo
   echo
   echo -e "Yours "
