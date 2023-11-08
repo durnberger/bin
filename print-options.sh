@@ -30,17 +30,18 @@ echo
 #
 echo -e "Select from:"
 echo
-echo -e "1) Article (Markdown > PDF)"
-echo -e "2) Memo (Markdown > PDF)"
-echo -e "3) Article (HTML > PDF)"
-echo -e "4) Letter (Markdown > PDF)"
+echo -e "1) Article (Generic Markdown > PDF)"
+echo -e "2) Article (HTML > PDF)"
+echo -e "3) Article (Jekyll Markdown > PDF)"
+echo -e "4) Memo (Markdown > PDF)"
+echo -e "5) Letter (Markdown > PDF)"
 echo
 echo -e "Other Options:"
 echo
-echo -e "5) Standalone web page (Markdown > HTML)"
-echo -e "6) HTML > Markdown"
-echo -e "7) DOCX > PDF"
-echo -e "8) Take a URL and print the web page"
+echo -e "6) Standalone web page (Markdown > HTML)"
+echo -e "7) HTML > Markdown"
+echo -e "8) DOCX > PDF"
+echo -e "9) Take a URL and print the web page"
 
 echo
 
@@ -51,30 +52,34 @@ if [ "$choice" == "1" ]; then
     bash ~/bin/print/pandoc-md-to-pdf-article.sh
 
 elif [ "$choice" == "2" ]; then
-    # Memo from Markdown
-    bash ~/bin/print/pandoc-md-to-pdf-memo.sh
-
-elif [ "$choice" == "3" ]; then
     # Article from HTML
     bash ~/bin/print/pandoc-html-to-pdf.sh
 
+elif [ "$choice" == "3" ]; then
+    # Jekyll Markdown to PDF
+    bash ~/bin/print/jekyll-md-to-pdf-article.sh
+
 elif [ "$choice" == "4" ]; then
+    # Memo from Markdown
+    bash ~/bin/print/pandoc-md-to-pdf-memo.sh
+
+elif [ "$choice" == "5" ]; then
     # Letter
     bash ~/bin/print/pandoc-letter.sh
 
-elif [ "$choice" == "5" ]; then
+elif [ "$choice" == "6" ]; then
     # Standalone web page - markdown to HTML
     bash ~/bin/print/pandoc-md-to-html.sh
 
-elif [ "$choice" == "6" ]; then
+elif [ "$choice" == "7" ]; then
     # HTML to Markdown
     bash ~/bin/print/pandoc-html-to-md.sh
 
-elif [ "$choice" == "7" ]; then
+elif [ "$choice" == "8" ]; then
     # DOCX to PDF
     bash ~/bin/print/pandoc-docx-to-pdf.sh
 
-elif [ "$choice" == "8" ]; then
+elif [ "$choice" == "9" ]; then
     # Print a Web Page
     bash ~/bin/print/print-web-page.sh
 

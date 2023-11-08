@@ -3,7 +3,7 @@
 # Used to print the markdown document open in neovim
 # Invoke with the command;
 #
-#   `:%write !~bin/print/nvim-md-to-pdf.sh`
+#   `:%write !~/bin/print/nvim-md-to-pdf.sh`
 #
 
 # Variables
@@ -19,7 +19,7 @@ pandoc \
     --metadata lang="en-GB" \
     --standalone \
     --pdf-engine weasyprint \
-    --css ~/.pandoc/css/print-memo.css \
+    --css ~/.pandoc/css/print-article.css \
     -o ~/Documents/TEMP.pdf
 
     # ---- Compress TEMP.pdf and generate the final output ----
