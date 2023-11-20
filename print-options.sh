@@ -21,7 +21,7 @@ echo -e ${NC}
 
 echo
 echo -e "Remember to 'cd' into the directory that holds the"
-echo -e "file you want to print before running this script"
+echo -e "file you want to process before running this script"
 echo
 echo -e "Processed files will be saved to '~/Documents'"
 echo
@@ -30,9 +30,9 @@ echo
 #
 echo -e "Select from:"
 echo
-echo -e "1) Article (Generic Markdown > PDF)"
+echo -e "1) Article (Markdown > PDF)"
 echo -e "2) Article (HTML > PDF)"
-echo -e "3) Article (Jekyll Markdown > PDF)"
+echo -e "3) Create PDF for Family History web site (Markdown > PDF)"
 echo -e "4) Memo (Markdown > PDF)"
 echo -e "5) Letter (Markdown > PDF)"
 echo
@@ -56,8 +56,8 @@ elif [ "$choice" == "2" ]; then
     bash ~/bin/print/pandoc-html-to-pdf.sh
 
 elif [ "$choice" == "3" ]; then
-    # Jekyll Markdown to PDF
-    bash ~/bin/print/jekyll-md-to-pdf-article.sh
+    # Print a Web Page
+    bash ~/bin/print/family-md-to-pdf.sh 
 
 elif [ "$choice" == "4" ]; then
     # Memo from Markdown
@@ -85,6 +85,7 @@ elif [ "$choice" == "9" ]; then
 
 else
     # Exit
+    echo
     echo -e "Goodbye!"
     exit
 
