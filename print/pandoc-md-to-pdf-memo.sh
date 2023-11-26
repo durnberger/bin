@@ -45,7 +45,8 @@ if [[ -f "$type" ]] ; then
     	       --metadata author="Paul Dürnberger" \
     	       --metadata lang="en-GB" \
                --standalone \
-       	       --pdf-engine weasyprint \
+               --template ~/.pandoc/html/template.html \
+               --pdf-engine weasyprint \
     	       --css ~/.pandoc/css/print-memo.css \
                -o ~/Documents/TEMP.pdf
 

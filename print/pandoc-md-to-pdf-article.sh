@@ -46,10 +46,9 @@ if [[ -f "$type" ]] ; then
     	       --metadata pagetitle="$stem" \
     	       --metadata author="Paul Dürnberger" \
     	       --metadata lang="en-GB" \
-               --standalone \
                --include-after-body ~/.pandoc/html/article-footer.html \
        	       --pdf-engine weasyprint \
-    	       --css ~/.pandoc/css/print-article.css \
+               --css ~/.pandoc/css/print-article.css \
                -o ~/Documents/TEMP.pdf
 
         # ---- Convert to PDF with latex--------

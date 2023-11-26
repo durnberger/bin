@@ -18,6 +18,7 @@ pandoc \
     --metadata author="Paul Dürnberger" \
     --metadata lang="en-GB" \
     --standalone \
+    --template ~/.pandoc/html/template.html \
     --pdf-engine weasyprint \
     --css ~/.pandoc/css/print-article.css \
     -o ~/Documents/TEMP.pdf

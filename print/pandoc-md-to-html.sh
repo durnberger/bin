@@ -44,7 +44,8 @@ if [[ -f "$type" ]] ; then
 	# o=output file
 	#
 	pandoc -f markdown ${filename} \
-			--include-before ~/.pandoc/html/article-header.html \
+            --template ~/.pandoc/html/template.html \
+            --include-before ~/.pandoc/html/article-header.html \
 			--include-after ~/.pandoc/html/article-footer.html \
 			--css ~/.pandoc/css/build-webpage.css \
 			-t html5 \

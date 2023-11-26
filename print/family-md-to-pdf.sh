@@ -69,9 +69,9 @@ if [[ -f "$TYPE" ]] ; then
             --metadata author="Paul Dürnberger" \
         	--metadata lang="en-GB" \
             --standalone \
-            --include-after-body ~/.pandoc/html/article-footer.html \
+            --template ~/.pandoc/html/fam-history.html \
            	--pdf-engine weasyprint \
-        	--css ~/.pandoc/css/print-article.css \
+        	--css ~/.pandoc/css/fam-history.css \
             -o $WRITING/hold/TEMP.pdf  
 
 
@@ -124,8 +124,10 @@ if [[ -f "$TYPE" ]] ; then
             echo -e "layout: post"
             echo -e "title: "
             echo -e "categories: $CHOICE"
+            echo 
             echo -e "family_tree: "
-            echo
+            echo -e "featured_image: "
+            echo 
             echo -e "synopsis: "
             echo
             echo -e "source: $BASE"
