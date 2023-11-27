@@ -1,12 +1,14 @@
 #!/bin/bash
-#
 
 echo
-echo -e "------------------------------"
-echo -e "Convert markdown to a PDF memo"
-echo -e "------------------------------"
+echo -e "---------------------------------"
+echo -e "Convert markdown to a PDF article"
+echo -e "---------------------------------"
 echo
 echo -e "This script will convert a 'markdown' file to a 'pdf'"
+echo
+echo -e "Before running this script, 'cd' into the directory"
+echo -e "that contains the file you wish to convert"
 echo
 echo -e "The output will be saved to '~/Documents'"
 echo
@@ -44,10 +46,8 @@ if [[ -f "$type" ]] ; then
     	       --metadata pagetitle="$stem" \
     	       --metadata author="Paul Dürnberger" \
     	       --metadata lang="en-GB" \
-               --standalone \
-               --template ~/.pandoc/html/template.html \
-               --pdf-engine weasyprint \
-    	       --css ~/.pandoc/css/print-memo.css \
+       	       --pdf-engine weasyprint \
+               --css ~/.pandoc/css/article.css \
                -o ~/Documents/TEMP.pdf
 
         # ---- Convert to PDF with latex--------
@@ -87,7 +87,7 @@ if [[ -f "$type" ]] ; then
     
         # ---- Open the newly generated PDF file ----
         #
-        evince ~/Documents/${stem}.pdf &
+        evince ~/Documents/${stem}.pdf
 
        	# --------End of PDF--------
 
@@ -96,11 +96,9 @@ if [[ -f "$type" ]] ; then
     done
 
 else
-    
-    echo 
-    echo -e "================================"
+
+    echo
     echo -e "There are no markdown files here"
-    echo -e "================================"
-    echo 
+    echo
 
 fi

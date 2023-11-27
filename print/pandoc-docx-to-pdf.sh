@@ -52,7 +52,7 @@ if [[ -f "$type" ]] ; then
     	       --highlight-style tango \
     	       --table-of-contents \
     	       --pdf-engine weasyprint \
-    	       --css ~/.pandoc/css/print-article.css \
+    	       --css ~/.pandoc/css/article.css \
     	       -V author="" \
     	       -o ~/Documents/${stem}.pdf
 

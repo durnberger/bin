@@ -45,7 +45,7 @@ if [[ -f "$type" ]] ; then
             --metadata author="Paul Dürnberger" \
             --metadata lang="en-GB" \
             --pdf-engine weasyprint \
-            --css ~/.pandoc/css/print-article.css \
+            --css ~/.pandoc/css/article.css \
             -o ~/Documents/TEMP.pdf
 
         # ---- Compress TEMP.pdf and generate the final output ----

@@ -33,15 +33,13 @@ echo
 echo -e "1) Article (Markdown > PDF)"
 echo -e "2) Article (HTML > PDF)"
 echo -e "3) Create PDF for Family History web site (Markdown > PDF)"
-echo -e "4) Memo (Markdown > PDF)"
-echo -e "5) Letter (Markdown > PDF)"
+echo -e "4) Letter (Markdown > PDF)"
 echo
 echo -e "Other Options:"
 echo
-echo -e "6) Standalone web page (Markdown > HTML)"
-echo -e "7) HTML > Markdown"
-echo -e "8) DOCX > PDF"
-echo -e "9) Take a URL and print the web page"
+echo -e "5) HTML > Markdown"
+echo -e "6) DOCX > PDF"
+echo -e "7) Take a URL and print the web page"
 
 echo
 
@@ -49,7 +47,7 @@ read choice
 
 if [ "$choice" == "1" ]; then
     # Article from Markdown
-    bash ~/bin/print/pandoc-md-to-pdf-article.sh
+    bash ~/bin/print/pandoc-md-to-pdf.sh
 
 elif [ "$choice" == "2" ]; then
     # Article from HTML
@@ -60,26 +58,18 @@ elif [ "$choice" == "3" ]; then
     bash ~/bin/print/family-md-to-pdf.sh 
 
 elif [ "$choice" == "4" ]; then
-    # Memo from Markdown
-    bash ~/bin/print/pandoc-md-to-pdf-memo.sh
-
-elif [ "$choice" == "5" ]; then
     # Letter
     bash ~/bin/print/pandoc-letter.sh
 
-elif [ "$choice" == "6" ]; then
-    # Standalone web page - markdown to HTML
-    bash ~/bin/print/pandoc-md-to-html.sh
-
-elif [ "$choice" == "7" ]; then
+elif [ "$choice" == "5" ]; then
     # HTML to Markdown
     bash ~/bin/print/pandoc-html-to-md.sh
 
-elif [ "$choice" == "8" ]; then
+elif [ "$choice" == "6" ]; then
     # DOCX to PDF
     bash ~/bin/print/pandoc-docx-to-pdf.sh
 
-elif [ "$choice" == "9" ]; then
+elif [ "$choice" == "7" ]; then
     # Print a Web Page
     bash ~/bin/print/print-web-page.sh
 

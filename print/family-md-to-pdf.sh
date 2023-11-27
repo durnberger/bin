@@ -69,9 +69,9 @@ if [[ -f "$TYPE" ]] ; then
             --metadata author="Paul Dürnberger" \
         	--metadata lang="en-GB" \
             --standalone \
-            --template ~/.pandoc/html/fam-history.html \
+            --template ~/.pandoc/html/template-family-history.html \
            	--pdf-engine weasyprint \
-        	--css ~/.pandoc/css/fam-history.css \
+        	--css ~/.pandoc/css/article.css \
             -o $WRITING/hold/TEMP.pdf  
 
 

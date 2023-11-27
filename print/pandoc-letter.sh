@@ -35,10 +35,9 @@ if [[ -f "$type" ]] ; then
 	       --metadata pagetitle="$stem" \
 	       --metadata author="Paul Dürnberger" \
 	       --metadata lang="en-GB" \
-	       --include-before-body ~/.pandoc/html/letter-header.html \
-	       --include-after-body ~/.pandoc/html/letter-footer.html \
- 	       --pdf-engine weasyprint \
-	       --css ~/.pandoc/css/print-letter.css \
+		   --template ~/.pandoc/html/template-letter.html \
+		   --pdf-engine weasyprint \
+	       --css ~/.pandoc/css/letter.css \
 	       -V author="Paul Dürnberger" \
 	       -o ~/Documents/${stem}.pdf
 
