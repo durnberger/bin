@@ -47,7 +47,7 @@ if [[ -f "$type" ]] ; then
     	       --metadata author="Paul Dürnberger" \
     	       --metadata lang="en-GB" \
        	       --pdf-engine weasyprint \
-               --css ~/.pandoc/css/article.css \
+               --css ~/.pandoc/css/default.css \
                -o ~/Documents/TEMP.pdf
 
         # ---- Convert to PDF with latex--------

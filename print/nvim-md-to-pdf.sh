@@ -18,8 +18,9 @@ pandoc \
     --metadata author="Paul Dürnberger" \
     --metadata lang="en-GB" \
     --standalone \
+    --template ~/.pandoc/html/template-default.html \
     --pdf-engine weasyprint \
-    --css ~/.pandoc/css/article.css \
+    --css ~/.pandoc/css/default.css \
     -o ~/Documents/TEMP.pdf
 
     # ---- Compress TEMP.pdf and generate the final output ----

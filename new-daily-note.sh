@@ -25,7 +25,6 @@ if [ ! -f "$FILENAME" ]; then
         echo -e "date: $DATE"
         echo -e "uid: $UNIQUE"
         echo -e "author: Paul Dürnberger"
-        echo -e "title: $DAY"
         echo -e "tags: [note]"
         echo -e "---"
         echo
