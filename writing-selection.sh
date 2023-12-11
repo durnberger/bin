@@ -33,14 +33,13 @@ echo -e ${NC}
 #
 echo -e "Select from:"
 echo
-echo -e "1) Daily Note (Journal)"
-echo -e "2) Quick Note (Unsorted_Notes)"
+echo -e "1) Daily Note"
+echo -e "2) Quick Note"
 echo -e "3) Family History"
 echo -e "4) Technology"
-echo -e "5) Travel"
-echo -e "6) Correspondence"
+echo -e "5) Correspondence"
 echo
-echo -e "7) Open the Writing Directory"
+echo -e "6) Open the Writing Directory"
 echo 
 
 read choice
@@ -69,19 +68,10 @@ elif [ "$choice" == "4" ]; then
     bash $BIN/new-topical-note.sh
 
 elif [ "$choice" == "5" ]; then
-    TRAVYEAR=$WRIDIR/Travel/posts/$YEAR
-    if [ ! -d $TRAVYEAR ]; then
-        mkdir -p $TRAVYEAR
-    fi 
-
-    cd $TRAVYEAR 
-    bash $BIN/new-topical-note.sh 
-
-elif [ "$choice" == "6" ]; then
 	# Correspondence
 	bash $BIN/new-correspondence.sh
 
-elif [ "$choice" == "7" ]; then
+elif [ "$choice" == "6" ]; then
 	# Writing Directory 
     mc $WRIDIR
 

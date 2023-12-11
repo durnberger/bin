@@ -18,8 +18,8 @@ pandoc \
     --metadata author="Paul Dürnberger" \
     --metadata lang="en-GB" \
     --standalone \
-    --template ~/.pandoc/html/template-default.html \
     --pdf-engine weasyprint \
+    --template ~/.pandoc/html/template-default.html \
     --css ~/.pandoc/css/default.css \
     -o ~/Documents/TEMP.pdf
 
@@ -41,3 +41,45 @@ pandoc \
     # ---- Open the newly generated PDF file ----
     #
     evince ~/Documents/$FILE.pdf &
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -3,7 +3,7 @@
 # With thanks to https://www.youtube.com/watch?v=zB_3FIGRWRU
 
 # Switch to the notes directory  
-DIR=~/Documents/Writing/Daily_Notes/ 
+DIR=~/Documents/Writing/Journal/ 
 cd $DIR 
 
 # Today's date and time 
@@ -28,7 +28,7 @@ if [ ! -f "$FILENAME" ]; then
         echo -e "tags: [note]"
         echo -e "---"
         echo
-        echo -e "# Notes for $DAY" 
+        echo -e "# $DAY" 
     } > $FILENAME  
 fi
 
