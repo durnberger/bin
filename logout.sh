@@ -19,6 +19,6 @@ case $option in
         reboot
         ;;
     'Power Off')
-        shutdown -h now
+        shutdown now
         ;;
 esac

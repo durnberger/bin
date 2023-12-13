@@ -20,8 +20,8 @@ echo -e "----------------"
 echo -e ${NC}
 
 echo
-echo -e "Remember to 'cd' into the directory that holds the"
-echo -e "file you want to process before running this script"
+echo -e ${LIGHTRED}"Remember to 'cd' into the directory that holds the"
+echo -e "file you want to process before running this script"${NC}
 echo
 echo -e "Processed files will be saved to '~/Documents'"
 echo

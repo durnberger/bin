@@ -38,24 +38,23 @@ echo -e "2) Quick Note"
 echo -e "3) Family History"
 echo -e "4) Technology"
 echo -e "5) Correspondence"
-echo
-echo -e "6) Open the Writing Directory"
+
 echo 
 
 read choice
 
 if [ "$choice" == "1" ]; then
     # Daily note
-    bash $BIN/new-daily-note.sh
+    bash $BIN/write/new-daily-note.sh
 
 elif [ "$choice" == "2" ]; then
     # Quick Note 
-    bash $BIN/new-quick-note.sh
+    bash $BIN/write/new-quick-note.sh
 
 elif [ "$choice" == "3" ]; then
     # Family History
     cd $WRIDIR/Family_History/posts/ 
-    bash $BIN/new-topical-note.sh
+    bash $BIN/write/new-topical-note.sh
 
 elif [ "$choice" == "4" ]; then
     # Technology
@@ -65,15 +64,11 @@ elif [ "$choice" == "4" ]; then
     fi 
 
     cd $TECHYEAR 
-    bash $BIN/new-topical-note.sh
+    bash $BIN/write/new-topical-note.sh
 
 elif [ "$choice" == "5" ]; then
 	# Correspondence
-	bash $BIN/new-correspondence.sh
-
-elif [ "$choice" == "6" ]; then
-	# Writing Directory 
-    mc $WRIDIR
+	bash $BIN/write/new-correspondence.sh
 
 else
 	# Exit
