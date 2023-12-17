@@ -3,8 +3,7 @@
 # ~/bin/dotfiles.sh
 
 # =====================================================================================
-# This is a simple script that can be used to symlink the files and folders in my 
-# dotfiles directory to my $HOME directory, should the need arise.
+# This is a simple script that can be used to symlink the files and folders in # # my dotfiles directory to my $HOME directory, should the need arise.
 # 
 # The script is a modified version of one to be found here;
 # https://blog.smalleycreative.com/using-git-and-github-to-manage-your-dotfiles/
@@ -32,13 +31,13 @@ SELECTION="\
     .bashrc \
     .bash_aliases \
     .nanorc \
-    .config/Code/User/settings.json \
- 
     .fluxbox \
     .mutt \
     .nano \
     .pandoc \
+    .config/Code/User/settings.json \
     .config/dunst \
+    .config/helix \
     .config/i3 \
     .config/i3blocks \
     .config/i3status \
@@ -49,7 +48,7 @@ SELECTION="\
 "
 
 # =====================================================================================
-# Wheels in motion 
+# Wheels in motion
 # 
 
 # cd to the dotfiles directory
@@ -61,6 +60,7 @@ for ITEM in $SELECTION; do
     # Move the original file from $HOME to the backup directory
     mv ~/$ITEM $BUP/
 
-    # Create a symlink for the file from the dotfile directory to the $HOME directory
+    # Create a symlink for the file from the dotfile directory to the 
+    # $HOME directory
     ln -s $DOT/$ITEM ~/$ITEM
 done
