@@ -1,5 +1,6 @@
 Desktop
-Music
+Dropbox
+gems
 node_modules
 Pictures
 Public
@@ -7,11 +8,13 @@ Server
 Templates
 tmp
 Videos
-gems
 .bundle
 .cache
+.config/autostart
+.config/brasero
 .config/BraveSoftware
 .config/Code
+.config/Cryptomator
 .config/evolution
 .config/GIMP
 .config/libreoffice
@@ -27,7 +30,6 @@ gems
 .local
 .mozilla
 .mutt/cache
-.node_modules
 .npm
 .pki
 .putty

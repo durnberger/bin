@@ -26,7 +26,7 @@ if ping -c1 -W5 192.168.0.6 | grep -q "0 received"; then
 
       # Music
       # =====
-      sudo mount -t cifs -o credentials=~/.smbcredentials,user=paul,uid=1000,gid=100,dir_mode=0755,file_mode=0755 //192.168.0.6/music /media/server/music
+      #sudo mount -t cifs -o credentials=~/.smbcredentials,user=paul,uid=1000,gid=100,dir_mode=0755,file_mode=0755 //192.168.0.6/music /media/server/music
 
       # Warehouse
       # =========
@@ -46,14 +46,6 @@ if ping -c1 -W5 192.168.0.6 | grep -q "0 received"; then
       else
         echo "Documents failed to mount"
         notify-send "Documents failed to mount"
-      fi
-
-      if findmnt | grep music > /dev/null; then
-        echo "Music mounted"
-        notify-send "Music mounted"
-      else
-        echo "Music failed to mount"
-        notify-send "Music failed to mount"
       fi
 
       if findmnt | grep warehouse > /dev/null; then
