@@ -1,4 +1,4 @@
-#!/bin/bash
+#bin/bash
 #
 
 # Workflow for the Family History Project

@@ -3,16 +3,7 @@
 #
 
 # This is a means of getting around the lack of support for 'snippets' in Helix.
-# mi = multiple images
 # 
-# This script is saved to '~/bin/mi'
-# It is made executable with the command 'chmod +x ~/bin/mi'
-#
-# From within the document you want to use this 'snippet', type the following
-# command:
-#
-# ':insert-output mi' 
-#
 
 echo "<div class=\"row\">"
 echo "<div class=\"col\">"
