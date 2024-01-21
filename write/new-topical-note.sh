@@ -9,6 +9,7 @@
 
 # Name the file - requires user input
 echo
+echo -e "----------------"
 echo -e "New Topical Note"
 echo -e "----------------"
 echo
@@ -20,8 +21,7 @@ read INPUT
 
 # Title in front matter
 # Ensure first letter of each word is uppercase
-# Source: https://stackoverflow.com/questions/12487424/uppercase-first-character-in-a-variable-with-bash
-# One day I'll figure out why this works!
+# Source: https://stackoverflow.com/questions/12487424/uppercase-first-character-in-a-variable-with-bash (one day I'll figure out why this works!).
 foo="$INPUT"
 foo=( $foo )
 foo="${foo[@]^}"

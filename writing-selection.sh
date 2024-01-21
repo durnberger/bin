@@ -15,7 +15,7 @@ NC='\033[0m'	# NC=no colour
 WRIDIR=~/Documents/Writing
 
 # Script Directory
-BIN=~/bin
+BIN=~/bin/write
 
 # Current Year
 YEAR=$(date +%Y)
@@ -33,42 +33,31 @@ echo -e ${NC}
 #
 echo -e "Select from:"
 echo
-echo -e "1) Daily Note"
-echo -e "2) Quick Note"
+echo -e "1) Journal"
+echo -e "2) Notes"
 echo -e "3) Family History"
-echo -e "4) Technology"
-echo -e "5) Correspondence"
+echo -e "4) Correspondence"
 
-echo 
+echo
 
 read choice
 
 if [ "$choice" == "1" ]; then
     # Daily note
-    bash $BIN/write/new-daily-note.sh
+    bash $BIN/new-daily-note.sh
 
 elif [ "$choice" == "2" ]; then
     # Quick Note 
-    bash $BIN/write/new-quick-note.sh
+    bash $BIN/new-quick-note.sh
 
 elif [ "$choice" == "3" ]; then
     # Family History
     cd $WRIDIR/Family_History/posts/ 
-    bash $BIN/write/new-topical-note.sh
+    bash $BIN/new-topical-note.sh
 
 elif [ "$choice" == "4" ]; then
-    # Technology
-    TECHYEAR=$WRIDIR/Technology/posts/$YEAR 
-    if [ ! -d $TECHYEAR ]; then 
-        mkdir -p $TECHYEAR 
-    fi 
-
-    cd $TECHYEAR 
-    bash $BIN/write/new-topical-note.sh
-
-elif [ "$choice" == "5" ]; then
 	# Correspondence
-	bash $BIN/write/new-correspondence.sh
+	bash $BIN/new-correspondence.sh
 
 else
 	# Exit

@@ -3,25 +3,33 @@
 # With thanks to https://www.youtube.com/watch?v=zB_3FIGRWRU
 
 # Switch to the notes directory  
-DIR=~/Documents/Writing/Journal/notes 
+DIR=~/Documents/Writing/Notes/ 
 cd $DIR 
 
-# Today's date and time 
-UNIQUE=$(date +"%Y%m%d%H%M%S")
+# Date 
 DATE=$(date +"%A %d %B %Y")
-TIMESTAMP=$(date +"%H:%M:%S")
+
+# ID using oday's date and time
+ID=$(date +"%Y%m%d%H%M%S")
 
 # Filename
-FILENAME=$UNIQUE.md
+FILENAME=$ID.md
 
 # Create the file
 {
-    echo -e "# $DATE" 
-    echo -e "## $TIMESTAMP"
-} > $FILENAME  
+    echo -e "---"
+    echo -e "uid: $ID "
+    echo -e "tags: []"
+    echo -e "---"
+    echo
+    echo -e "# title"
+    echo
+    echo -e "$DATE"
+    echo
+} > $FILENAME
 
 nvim \
-    -c "norm G2o" \
+    -c "norm Go" \
     -c "norm zz" \
     $FILENAME
 

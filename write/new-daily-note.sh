@@ -9,10 +9,8 @@ cd $DIR
 # Today's date and time 
 DAY=$(date +"%A")
 DATE=$(date +"%Y-%m-%d")
+ID=$(date +"%Y%m%d%H%M%S")
 TIMESTAMP=$(date +"%H:%M:%S")
-
-# UID in the frontmatter 
-UNIQUE=$(date +"%Y%m%d%H%M%S")
 
 # Filename
 FILENAME="$DATE-$DAY".md
@@ -22,10 +20,8 @@ if [ ! -f "$FILENAME" ]; then
     # Create the file
     {
         echo -e "---"
-        echo -e "date: $DATE"
-        echo -e "uid: $UNIQUE"
-        echo -e "author: Paul Dürnberger"
-        echo -e "tags: [note]"
+        echo -e "uid: $ID"
+        echo -e "tags: [note, daily]"
         echo -e "---"
         echo
         echo -e "# $DAY" 
