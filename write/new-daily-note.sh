@@ -3,7 +3,7 @@
 # With thanks to https://www.youtube.com/watch?v=zB_3FIGRWRU
 
 # Switch to the notes directory  
-DIR=~/Documents/Writing/Journal/ 
+DIR=~/Documents/Writing/Journal/daily/ 
 cd $DIR 
 
 # Today's date and time 

@@ -35,7 +35,6 @@
 REPOSITORIES="\
     bin \
     dotfiles \
-    durnberger.github.io \
     mutt-email \
     "
 # Timestamp
