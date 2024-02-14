@@ -33,10 +33,11 @@ echo -e "-------"
 echo -e "Select from:"
 echo
 echo -e "1) 'nordvpn settings'"
-echo -e "2) 'nordvpn connect'     - Connect to any available server"
-echo -e "3) 'nordvpn-connect.sh'  - Custom script. Connect to United_Kingdom"
-echo -e "4) 'nordvon-restart.sh'  - Custom script. Kill nordvpn and reconnect to any server"
-echo -e "5) Quit"
+echo -e "2) 'nordvpn connect'    - Connect to any available server"
+echo -e "3) 'nordvpn-connect.sh' - Custom script. Connect to United_Kingdom"
+echo -e "4) 'nordvon-restart.sh' - Custom script. Kill nordvpn and reconnect to any server"
+echo -e "5) 'nordvpn disconnect' - Disconnect from server"
+echo -e "6) Quit this script"
 echo
 read choice
 echo
@@ -60,6 +61,10 @@ elif [ "$choice" == "4" ]; then
 	bash ~/bin/vpn/nordvpn-restart.sh
 
 elif [ "$choice" == "5" ]; then
+    nordvpn disconnect
+    echo 
+
+elif [ "$choice" == "6" ]; then
   exit
 
 else
