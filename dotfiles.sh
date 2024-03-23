@@ -3,7 +3,8 @@
 # ~/bin/dotfiles.sh
 
 # =====================================================================================
-# This is a simple script that can be used to symlink the files and folders in # # my dotfiles directory to my $HOME directory, should the need arise.
+# This is a simple script that can be used to symlink the files and folders in my 
+# dotfiles directory to my $HOME directory, should the need arise.
 # 
 # The script is a modified version of one to be found here;
 # https://blog.smalleycreative.com/using-git-and-github-to-manage-your-dotfiles/
@@ -14,15 +15,15 @@
 # If necessary create the backup directory 
 # Better safe than sorry...
 #
-if [ ! -d $HOME/.dotfiles/_backup ]; then
-    mkdir -p $HOME/.dotfiles/_backup
+if [ ! -d $HOME/dotfiles/_backup ]; then
+    mkdir -p $HOME/dotfiles/_backup
 fi
 
 # =====================================================================================
 # Variables 
 #
-DOT=$HOME/.dotfiles
-BUP=$DOT/_backup
+DOT=$HOME/dotfiles
+BUP=$HOME/dotfiles/_backup
 
 # =====================================================================================
 # Files and directories to be symlinked 
@@ -35,7 +36,6 @@ SELECTION="\
     .mutt \
     .nano \
     .pandoc \
-    .config/Code/User/settings.json \
     .config/dunst \
     .config/helix \
     .config/i3 \
@@ -45,6 +45,7 @@ SELECTION="\
     .config/nvim \
     .config/picom \
     .config/rofi \
+    .local/share/shotwell \
 "
 
 # =====================================================================================

@@ -48,7 +48,7 @@ if [[ -f "$type" ]] ; then
     	       --metadata lang="en-GB" \
        	       --pdf-engine weasyprint \
                --template ~/.pandoc/html/template-default.html \
-               --css ~/.pandoc/css/default.css \
+               --css ~/.pandoc/css/article.css \
                -o ~/Documents/TEMP.pdf
 
         # ---- Convert to PDF with latex--------

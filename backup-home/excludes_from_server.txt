@@ -13,11 +13,8 @@ Videos
 .config/autostart
 .config/brasero
 .config/BraveSoftware
-.config/Code
 .config/Cryptomator
-.config/evolution
 .config/GIMP
-.config/libreoffice
 .config/musikcube/1/thumbs
 .config/pulse
 .config/spotify
@@ -32,9 +29,7 @@ Videos
 .mutt/cache
 .npm
 .pki
-.putty
 .redhat
 .sane
 .ssh
 .vim
-.vscode

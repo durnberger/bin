@@ -1,9 +1,15 @@
 #!/bin/bash
 
-# For use with the Family History web site. This script will convert a 
-# completed article into a PDF and move that PDF to the appropriate 
-# folder within the web page structure. 
-#
+echo 
+echo "For use with the Family History web site"
+echo
+echo "This script will convert a completed article into a PDF and"
+echo "move that PDF to the appropriate folder within the web page"
+echo "structure"
+echo 
+echo "The script will also create or open the corresponding Jekyll"
+echo "markdown file for editing"
+echo 
 
 # -----------------------------------------------------------------
 # Variables

@@ -3,13 +3,12 @@
 # With thanks to https://www.youtube.com/watch?v=zB_3FIGRWRU
 
 # Switch to the notes directory  
-DIR=~/Documents/Writing/Journal 
+DIR=~/Documents/Writing/Journal/current_year/ 
 cd $DIR 
 
 # Today's date and time 
 DAY=$(date +"%A")
 DATE=$(date +"%Y-%m-%d")
-ID=$(date +"%Y%m%d%H%M%S")
 TIMESTAMP=$(date +"%H:%M:%S")
 
 # Filename
@@ -19,12 +18,10 @@ FILENAME="$DATE-$DAY".md
 if [ ! -f "$FILENAME" ]; then 
     # Create the file
     {
-        echo -e "---"
-        echo -e "uid: $ID"
-        echo -e "tags: [note, daily]"
-        echo -e "---"
+        echo -e "# $FILENAME"
         echo
-        echo -e "# $DAY" 
+        echo -e "Tagged: #tags"
+
     } > $FILENAME  
 fi
 

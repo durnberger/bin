@@ -55,7 +55,7 @@ NC='\033[0m'	    # clear
 # Ensure the symlink to `~/.dotfiles` exists
 #
 if [ ! -d ~/Documents/Github/dotfiles ]; then
-    ln -s ~/.dotfiles ~/Documents/Github/dotfiles 
+    ln -s ~/dotfiles ~/Documents/Github/dotfiles 
 fi
 
 # Loop through the Github repositories
